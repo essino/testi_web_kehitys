@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+p {
+    margin-left: 1.5em;
+    font-size: 16px;
+}
+
+span.bold {
+    font-weight: bold;
+}
+
+table {
+    border: 2px solid gray;
+    border-collapse: collapse;
+}
+
+caption {
+    border: 2px solid gray;
+    border-bottom: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+th {
+    margin-left: 100em;
+}
+
+.red {
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    border-right: 2px solid gray;
+    font-weight: bold;
+}

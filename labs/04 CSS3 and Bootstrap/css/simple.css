@@ -1,0 +1,50 @@
+body {
+     font-family: Arial, Verdana, sans-serif;
+     background-color: #FFCACA;
+ }
+
+h1, h2 {
+    color: rgba(65,105,225,0.7);
+    font-weight: bold;
+    font-size: 4.0em;
+}
+
+ul, ol {
+    border: 15px solid #FFCACA;
+    font-size: 0.8em;
+    margin-left: 1.5em;
+}
+
+p::first-letter {
+    font-size:8em;
+}
+
+p::first-line {
+    font-weight: bold;
+}
+
+p {
+    margin-left: 1.5em;
+}
+
+figcaption {
+    font-size: smaller;
+    font-weight: bold;
+}
+
+p.copyright_notice {
+    font-size: 0.8em;
+}
+
+#special {
+    font-size: 0.8em;
+    color: yellowgreen;
+    font-style: italic;
+    border-left: 2px solid black;
+    margin-left: 40px;
+    padding-left: 10px;
+}
+
+pre {
+    font-family: monospace;
+}

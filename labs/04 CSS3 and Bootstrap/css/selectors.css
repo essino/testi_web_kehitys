@@ -12,6 +12,11 @@ h1.alert {
 
 .alert {
     color: red;
+
+}
+
+.underlined {
+    text-decoration: underline;
 }
 
 p#unique {

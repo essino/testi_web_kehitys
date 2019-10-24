@@ -18,13 +18,13 @@
 				Student id: <input type="text" name="id"  />
 			</div>
 			<div>
-				Email:
+				Email: <input type="email" name="email" />
 				<!--
 				Make an input named "email"
 				-->
 			</div>
 			<div>
-				Assignment:
+				Assignment: <input type="text" name="assignment" />
 				<!--
 				Make an input named "assignment"
 				-->
@@ -32,31 +32,40 @@
 			</div>
 
 			<div>
-				Code:
+				Code: <input type="textarea" name="code" />
 				<!--
 				Make an input named "code" which is a text area to put student's code into.
 				-->
 				
 			</div>
 			<div>
-				Cheat:
+				<label>Cheat: <input type="checkbox" name="cheat" /></label>
 			<!--
 				Make an input named "cheat" which is a check box the student must check.
 			-->
 			</div>
 			<div>
-				Pay:
+
+					<legend>Pay:</legend>
+					<label><input type="radio" name="pay" value="visa"> Visa </label><br>
+					<label><input type="radio" name="pay" value="paypal"> Paypal </label><br>
+					<label><input type="radio" name="pay" value="mastercard"> Mastercard </label>
 			<!--
 				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
 			-->
 			</div>
-			<div>
-				Score:
+
+				Score: <select name="score"/>
+					<option value="notknown">Not selected</option>
+					<option value="item1">Item 1</option>
+			</select>
 			<!--
 				Make an input named "score" which is a list of choices for the score 
 			-->
 			</div>
+			<div>
 			<input type="submit" />
+			</div>
 		</form>
 		<a href="http://jigsaw.w3.org/css-validator/check/referer">Validate</a>
 	</body>

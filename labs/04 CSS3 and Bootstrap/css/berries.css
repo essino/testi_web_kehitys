@@ -1,0 +1,28 @@
+
+p {
+    text-align: center;
+}
+
+p.heading {
+
+    border: solid black 3px;
+    padding: 5%;
+    margin: 5%;
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+
+    border: solid lightblue 3px;
+}
+
+p.blue {
+    background-color: lightblue;
+    border-top: 1px solid black;
+    padding: 5%;
+    margin: 5%;
+}

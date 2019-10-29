@@ -23,10 +23,6 @@ caption {
     font-weight: bold;
 }
 
-th {
-    margin-left: 100em;
-}
-
 .red {
     background-color: red;
     color: white;
@@ -37,4 +33,8 @@ th {
     text-transform: uppercase;
     border-right: 2px solid gray;
     font-weight: bold;
+}
+
+.grey {
+    background-color: lightgray;
 }

@@ -10,7 +10,9 @@ h1, h2 {
 }
 
 ul, ol {
-    border: 15px solid #FFCACA;
+
+    border: 15px solid bisque;
+    color: darkgrey;
     font-size: 0.8em;
     margin-left: 1.5em;
 }

@@ -2,8 +2,11 @@
 <html lang="en">
 	<!--
 	This page demonstrates a form.
+	I changed the error message language by changing the language setting of the browser.
 	-->
+
 	<head>
+		<link href="css/form.css" type="text/css" rel="stylesheet" />
 		<meta charset="utf-8"/>
 		<title>Demonstrating HTML forms</title>
 	</head>
@@ -12,31 +15,28 @@
 		<h1>Turnitin</h1>
 		<form  lang="fi" action="">
 			<div>
-				Name: <input type="text" name="studentname"/>
+				Name: <input type="text" name="studentname" placeholder="First Last"/>
 			</div>
 			<div>
-				Student id: <input type="text" name="id"  />
+				Student id: <input type="text" name="id" pattern="[0-9]{6}-[0-9]{3}[0-9A-Za-z]" placeholder="000000-0000" />
 			</div>
 			<div>
-				Email: <input type="email" name="email" />
+				Email: <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="first.last@email.com" />
 				<!--
 				Make an input named "email"
 				-->
 			</div>
 			<div>
-				Assignment: <input type="text" name="assignment" />
+				Assignment: <input type="text" name="assignment" placeholder="Name of the assignment"/>
 				<!--
 				Make an input named "assignment"
 				-->
-				
 			</div>
-
 			<div>
-				Code: <input type="textarea" name="code" />
+				Code: <input type="textarea" name="code" placeholder="public class Code {}"/>
 				<!--
 				Make an input named "code" which is a text area to put student's code into.
 				-->
-				
 			</div>
 			<div>
 				<label>Cheat: <input type="checkbox" name="cheat" /></label>
@@ -45,26 +45,29 @@
 			-->
 			</div>
 			<div>
-
+				<fieldset>
 					<legend>Pay:</legend>
 					<label><input type="radio" name="pay" value="visa"> Visa </label><br>
 					<label><input type="radio" name="pay" value="paypal"> Paypal </label><br>
 					<label><input type="radio" name="pay" value="mastercard"> Mastercard </label>
-			<!--
+				</fieldset>
+					<!--
 				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
 			-->
 			</div>
-
+			<div>
 				Score: <select name="score"/>
 					<option value="notknown">Not selected</option>
 					<option value="item1">Item 1</option>
-			</select>
+					<option value="item2">Item 2</option></select>
 			<!--
 				Make an input named "score" which is a list of choices for the score 
 			-->
 			</div>
 			<div>
-			<input type="submit" />
+				<fieldset>
+			<input type="submit" value="Submit"/>
+				</fieldset>
 			</div>
 		</form>
 		<a href="http://jigsaw.w3.org/css-validator/check/referer">Validate</a>

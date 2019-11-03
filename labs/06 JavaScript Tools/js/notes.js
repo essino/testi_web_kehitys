@@ -1,8 +1,11 @@
+//unsure what to do about the ESLint; need more instructions to do this bit
+//unsure what to do about lab 6 part 4, added 'use strict' and corrected red warnings, program runs
+"use strict";
 
 var notes = new Array();
 
 function addItem() {
-	textbox = document.getElementById('item');
+	var textbox = document.getElementById('item');
 	var itemText = textbox.value;
 	textbox.value = '';
 	textbox.focus();
@@ -29,5 +32,5 @@ function deleteIndex(i) {
 	displayList();
 }
 
-button = document.getElementById('add');
+var button = document.getElementById('add');
 button.onclick = addItem;

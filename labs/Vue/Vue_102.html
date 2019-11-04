@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app-3">
+        <p v-show="seen">Now you see me</p>
+        <button v-on:click="seen ^= true">Näytä/Piilota</button>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    var app = new Vue({
+        el: '#app-3',
+        data: {
+            seen:false,
+        }
+    })
+
+</script>
+
+</body>
+</html>

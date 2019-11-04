@@ -9,7 +9,7 @@
 
 console.log(document);
 
-document.getElementById('save').onclick = function(){
+document.querySelector('#userForm').onkeyup = function(){
 	console.log('save');
 	// get a DOM object representing a form field.
 	var name = document.querySelector('#userForm input[type="text"]');
@@ -17,16 +17,13 @@ document.getElementById('save').onclick = function(){
 	document.querySelector('#summary h1').innerHTML = name.value;
 	var data = document.querySelectorAll('#userForm input');
 	console.log(data);
-	var paragraphs = document.querySelectorAll('#summary p');
-	console.log('found '+paragraphs.length+' p tags');
-	paragraphs[1].innerHTML = 'Hello World!';
-
 	var password = document.querySelector('#userForm input[type="password"]').value;
 	console.log(password);
+
 	var paragraphs = document.querySelectorAll('#summary p');
 	console.log('found '+paragraphs.length+' p tags');
-	paragraphs[2].innerHTML = password;
-
+	paragraphs[1].innerHTML = password;
+	paragraphs[2].innerHTML = 'Hello World!';
 
 	console.log('updating email');
 	var email = document.querySelector('#userForm input[type="email"]').value;

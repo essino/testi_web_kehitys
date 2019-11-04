@@ -20,8 +20,14 @@ document.getElementById('save').onclick = function(){
 	var paragraphs = document.querySelectorAll('#summary p');
 	console.log('found '+paragraphs.length+' p tags');
 	paragraphs[1].innerHTML = 'Hello World!';
-}
-document.querySelector('#userForm input[type="email"]').onclick = function() {
+
+	var password = document.querySelector('#userForm input[type="password"]').value;
+	console.log(password);
+	var paragraphs = document.querySelectorAll('#summary p');
+	console.log('found '+paragraphs.length+' p tags');
+	paragraphs[2].innerHTML = password;
+
+
 	console.log('updating email');
 	var email = document.querySelector('#userForm input[type="email"]').value;
 	document.querySelector('#summary p').innerHTML = email;

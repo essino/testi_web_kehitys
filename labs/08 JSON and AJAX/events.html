@@ -27,29 +27,9 @@
       }
       alert("You clicked on " + target.id);
     }
-    window.onload = mousefunction(); {
-      var  = document.getElementById("mouse");
-      if (button.addEventListener) {
-        button.addEventListener("mouseover",handleMouse, false);
-        button.attachEvent("mouseover",handleMouse);
-      }
-      function handleMouse(a) {
-        var eve = e || window.event;
-        var tar;
-        if (eve.target) {
-          tar = eve.target;
-        } else {
-          tar = eve.srcElement;
-        }
-        alert("You're mouse was over " + tar.id)
-      }
-    }
   </script>
 </head>
 <body>
 <span id="clickme">Click me!</span>
-<div id="mouse">Text text text</div>
 </body>
 </html>
-<!-- <h1 onmouseover="style.color='red'" onmouseout="style.color='black'">Mouse over this text</h1>-->
-

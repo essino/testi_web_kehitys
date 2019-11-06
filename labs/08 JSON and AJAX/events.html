@@ -16,6 +16,12 @@
       } else if (div.attachEvent) {
         div.attachEvent("click", handleClick);
       }
+      var divi = document.getElementById('divi');
+      if (divi.addEventListener) {
+        divi.addEventListener("mouseover", handleMouseOver, false);
+      } else if (divi.attachEvent){
+        divi.attachEvent("mouseover", handleMouseOver());
+      }
     };
     function handleClick(e) {
       var evt = e || window.event;
@@ -27,9 +33,21 @@
       }
       alert("You clicked on " + target.id);
     }
+    function handleMouseOver(hm){
+      var eventti = hm || window.event;
+      var targ;
+      if (eventti.target) {
+        targ = eventti.target;
+      } else {
+        targ = eventti.srcElement;
+      }
+      alert("Your mouse hovered over " + targ.id);
+    }
+
   </script>
 </head>
 <body>
 <span id="clickme">Click me!</span>
+<div id="divi">Text</div>
 </body>
 </html>

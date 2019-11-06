@@ -3,23 +3,51 @@
 <head>
   <meta charset="utf-8">
   <title> JSON </title>
-  <script>
 
-var fidoString = '{ "name": "Fido", "breed": "Mixed", "weight": 38 }';
-var fido = JSON.parse(fidoString);
-console.log("We have made a dog out of a string! " + fido.name);
-
-
-var fido2 = {
-	name: "Fido",
-	breed: "Mixed",
-	weight: 38
-};
-var fidoString = JSON.stringify(fido2);
-console.log("We made a string from a dog! " + fidoString);
-
-  </script>
 </head>
 <body>
+<div id = "div"></div>
+<div id = "div2"></div>
+<div id = "div3"></div>
+<script>
+
+  var fidoString = '{ "name": "Fido", "breed": "Mixed", "weight": 38 }';
+  var fido = JSON.parse(fidoString);
+  console.log("We have made a dog out of a string! " + fido.name);
+
+
+  var fido2 = {
+    name: "Fido",
+    breed: "Mixed",
+    weight: 38
+  };
+  var fidoString = JSON.stringify(fido2);
+  console.log("We made a string from a dog! " + fidoString);
+
+  var employee = {
+    name: { first: "Colin",
+      second: "Stephen" },
+    title: "Assistant Lecturer"
+  }
+  var myString = JSON.stringify(employee);
+  console.log(myString);
+  var divi = document.getElementById('div');
+  divi.innerHTML = myString;
+
+  var employee = JSON.parse(myString);
+  var divi2 = document.getElementById('div2');
+  divi2.innerHTML = employee.name.first;
+
+  var employeename = {
+    first: employee.name.first,
+    last: employee.name.second
+  }
+
+  var newString = JSON.stringify(employeename);
+  var divi3 = document.getElementById('div3');
+  divi3.innerHTML = newString;
+
+
+</script>
 </body>
 </html>

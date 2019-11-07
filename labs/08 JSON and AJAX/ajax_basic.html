@@ -10,6 +10,10 @@
     Make a request
   </span>
 
+  <div><label for="write">Write a url</label><input type="text" name="write" id="write" required></div>
+  <button id="writeButton">
+    Go to the url
+  </button>
 
   <script type="text/javascript">
   (function() {
@@ -40,24 +44,34 @@
       }
 
       // set a callback function for when the httpRequest completes
-      httpRequest.onreadystatechange = alertContents;
+      httpRequest.onreadystatechange = alertContents404;
 
       // now do the actual AJAX request
+        console.log(url);
       httpRequest.open('GET', url);
       httpRequest.send();
     }
 
     // the callback
     // this will be run when the request completes (see above)
-    function alertContents() {
+    function alertContents404() {
       if (httpRequest.readyState === 4) {
-        if (httpRequest.status === 200) {
-          alert(httpRequest.responseText);
-        } else {
+          if (httpRequest.status === 200) {
+              alert(httpRequest.responseText);
+          } else if (httpRequest.status === 404) {
+              alert('Site is DOWN!');
+          } else {
           alert('There was a problem with the request.');
         }
       }
     }
+
+    writeButton.onclick = function() {
+        let writeurl = document.getElementById('write');
+        console.log(writeurl.value);
+        let writeButton = document.getElementById('writeButton');
+        console.log(writeButton);
+        makeRequest(writeurl.value); };
   })();
   </script>
 

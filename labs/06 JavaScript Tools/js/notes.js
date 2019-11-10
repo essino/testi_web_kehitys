@@ -8,6 +8,7 @@ function addItem() {
 	var textbox = document.getElementById('item');
 	var itemText = textbox.value;
 	textbox.value = '';
+	//the element's outlines change color
 	textbox.focus();
 	var quant = 1;
 

@@ -20,8 +20,10 @@ function process() {
     }
 
     // Validate the email address:
+    //indexOf returns -1 if the value(@ sign) is not found
+    //index here means the number of the letters in the string, first letter is 0, finds the number of the letter
     if (!email || !email.value 
-    || (email.value.length < 6) 
+    || (email.value.length < 6)
     || (email.value.indexOf('@') == -1)) {
         okay = false;
         alert('Please enter a valid email address!');

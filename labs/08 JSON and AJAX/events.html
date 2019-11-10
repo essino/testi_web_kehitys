@@ -11,16 +11,27 @@
   <script>
     window.onload = function() {
       var div = document.getElementById("clickme");
+      //me: this checks if the addeventlistener is possible in the browser
       if (div.addEventListener) {
+
         div.addEventListener("click", handleClick, false);
+          //document.body.style.backgroundColor = "red";
+        //if the addeventlistener is not possible, then let's try attachevent
+          //attachevent should work in Explorer when addeventlistener doesn't work in Explorer
       } else if (div.attachEvent) {
+
         div.attachEvent("click", handleClick);
+          //document.body.style.backgroundColor = "blue";
       }
       var divi = document.getElementById('divi');
       if (divi.addEventListener) {
+
         divi.addEventListener("mouseover", handleMouseOver, false);
+          //document.body.style.backgroundColor = "pink";
       } else if (divi.attachEvent){
-        divi.attachEvent("mouseover", handleMouseOver());
+
+        divi.attachEvent("mouseover", handleMouseOver);
+          //document.body.style.backgroundColor = "green";
       }
     };
     function handleClick(e) {
@@ -37,6 +48,7 @@
       var eventti = hm || window.event;
       var targ;
       if (eventti.target) {
+          //the target of the event, here it is divi
         targ = eventti.target;
       } else {
         targ = eventti.srcElement;

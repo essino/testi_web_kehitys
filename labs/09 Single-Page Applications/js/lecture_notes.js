@@ -8,11 +8,11 @@ if (window.location.hash == '#add' || notes.length === 0) {
 } else {
 	document.getElementById('addPage').style.display = 'none';
 }
-
 document.querySelector('#addPage button').onclick = function() {
 	console.log('add note');
 	var title = document.querySelector('#addPage input').value;
 	var note = document.querySelector('#addPage textarea').value;
+
 };
 
 /*
@@ -20,10 +20,17 @@ document.querySelector('#addPage button').onclick = function() {
  */ 
 document.querySelector('nav > ul > li:nth-child(1)').onclick = function() {
 	console.log('first link clicked');
+
+	document.getElementById('addPage').style.display = 'block';
+	document.getElementById('editPage').style.display = 'none';
+
 };
 
 document.querySelector('nav > ul > li:nth-child(2)').onclick = function() {
 	console.log('second link clicked');
+	document.getElementById('editPage').style.display = 'block';
+	document.getElementById('addPage').style.display = 'none';
+	display(document.getElementById('editPage'));
 };
 
 

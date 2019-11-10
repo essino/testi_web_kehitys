@@ -5,8 +5,6 @@ request.send(null);
 var data = JSON.parse(request.responseText);
 console.log(data);
 
-
-
 var books = data.books;
 
 /*var list = document.createElement('ul');
@@ -62,5 +60,5 @@ for (var i=0; i < books.length; i++) {
 	tr.appendChild(td);
 
 }
-document.body.appendChild(divi);
+//document.body.appendChild(divi);
 document.body.appendChild(table);

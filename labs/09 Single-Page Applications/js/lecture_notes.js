@@ -59,7 +59,12 @@ function display(element) {
 	console.log('display');
 	console.log(element.parentNode.parentNode.id);
 	var details = document.getElementById('details');
+	console.log(details);
 	var id = element.parentNode.parentNode.id;
+	console.log("! : " + element);
+	console.log("! : " + element.parentNode); //table cell element
+	console.log("! : " + element.parentNode.parentNode); //table row element
+	console.log("! : " + element.parentNode.parentNode.id); //table row's id
 	document.querySelector('#editPage input').value = notes[id].title;
 	document.querySelector('#editPage textarea').value = notes[id].note;
 	document.querySelector('#editPage p').innerHTML = id;
@@ -92,6 +97,7 @@ function loadList() {
 		row.id = i;
 		row.innerHTML = '<td><a onclick="display(this)" href="#">'+notes[i].title+'</a></td><td><a onclick="rem(this)" class="delete" href="#">delete</a></td>';
 		table.appendChild(row);
+		//a element at bottom, then table cell element, then table row element
 	}
 
 }

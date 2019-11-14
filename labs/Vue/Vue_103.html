@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Click me!</title>
+    <style>
+        body, button { margin: 10px; }
+        div { padding: 10px; }
+    </style>
+
+</head>
+<body>
+<div id="root">
+    <button id="add" @click="addTimes">+</button>
+    <button id="subtract" @click="subtractTimes">-</button>
+    <button id="zero" @click="goToZero">0</button>
+    <div id="mess">{{message + count + ' times'}}</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    new Vue ({
+        el: '#root',
+
+        data: {
+            count: 0,
+            message: "You clicked this "
+        },
+
+        methods: {
+            addTimes() {
+                this.count++;
+            },
+            subtractTimes(){
+                this.count--;
+            },
+            goToZero(){
+                this.count = 0;
+            }
+        }
+
+    });
+
+
+
+</script>
+</body>
+</html>

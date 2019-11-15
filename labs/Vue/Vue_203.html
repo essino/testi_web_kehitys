@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue list</title>
+</head>
+<body>
+<div id="root">
+    <!-- all Vue directives start with v- -->
+
+
+    <ul>
+        <!-- <li v-for='name in names'>{{ name }}</li> -->
+        <!--<li v-for='name in names' v-text='name'></li> -->
+        <li v-for='(name, index) in names'>{{ name + ' ' }}<button @click="deleteName(index)">Delete name</button></li>
+    </ul>
+
+    <input id='input' type="text" v-model="newName">
+    <button @click="addName">Add name</button>
+
+    <!-- <button v-on:click="addName">Add name</button> -->
+
+
+</div>
+
+<!-- kehitysversio, jossa hyödyllistä infoa konsolissa -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+
+    let app = new Vue({
+        //element with the id of root
+        el: '#root',
+        data: {
+            newName: '',
+            names: ['Joe', 'Mary', 'Jane', 'Joey']
+        },
+
+        methods: {
+            addName(){
+                this.names.push(this.newName);
+                this.newName = '';
+            },
+            deleteName(i){
+                this.names.splice(i,1);
+
+            }
+        }
+
+
+    });
+
+
+
+
+</script>
+</body>
+</html>

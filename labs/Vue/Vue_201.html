@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="root">
+    <!-- all Vue directives start with v- -->
+
+    <input type="text" id="input" v-model="message">
+
+    <p>The value of the input is: {{message}}</p>
+    <p>There are {{characterCount}} characters.</p>
+
+</div>
+
+<!-- kehitysversio, jossa hyödyllistä infoa konsolissa -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    let data = {
+        message: 'Hello World!'
+    };
+
+    new Vue({
+        //element with the id of root
+        el: '#root',
+        data: data,
+        computed: {
+            characterCount(){
+                return this.message.length;
+            }
+        }
+    })
+
+
+
+</script>
+
+</body>
+
+</html>

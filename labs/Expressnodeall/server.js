@@ -32,7 +32,7 @@ var server = app.listen(8081, function () {
 
 //Open http://127.0.0.1:8081/ in any browser
 //or Open http://127.0.0.1:8081/essi in any browser
-*/
+
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
@@ -49,3 +49,33 @@ con.connect(function(err) {
         console.log(result);
     });
 });
+*/
+console.log("Alkaa");
+
+const mariadb = require('mariadb');
+const pool = mariadb.createPool({
+    host: 'localhost',
+    user:'root',
+    password: 'YcUlm2rm2r',
+    database: 'example_db',
+    connectionLimit: 5
+});
+async function asyncFunction() {
+    let conn;
+    try {
+        console.log("ennen await");
+        conn = await pool.getConnection();
+        console.log("jälkeen await");
+        const rows = await conn.query("SELECT * FROM event");
+        console.log("Hie!");
+        console.log(rows); //[ {val: 1}, meta: ... ]
+        //const res = await conn.query("INSERT INTO myTable value (?, ?)", [1, "mariadb"]);
+        //console.log(res); // { affectedRows: 1, insertId: 1, warningStatus: 0 }
+
+    } catch (err) {
+        throw err;
+    } finally {
+        if (conn) return conn.end();
+    }
+};
+asyncFunction();

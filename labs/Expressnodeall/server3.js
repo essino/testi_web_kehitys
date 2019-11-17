@@ -7,7 +7,6 @@ var express = require('express');
 //inside the app variable (to start a new Express application)
 var app = express();
 
-let results = [];
 //You define routing using methods of the Express app object that correspond
 //to HTTP methods; for example, app.get() to handle GET requests.
 //This route path will match requests to the root route, /.
@@ -19,7 +18,7 @@ let results = [];
 
 app.get('/', function (req, res) {
     //sends the HTTP response
-    res.send(results);
+    res.send('Hello World');
 })
 
 //app.get('/essi', function (req, res) {
@@ -47,12 +46,7 @@ con.connect(function(err) {
     if (err) throw err;
     con.query("SELECT * FROM event", function (err, result, fields) {
         if (err) throw err;
-        if (result.length){
-            for (let i = 0; i < result.length; i++){
-                results.push(result[i]);
-            }
-            console.log(result);
-        }
+        console.log(result);
     });
 });
 /*

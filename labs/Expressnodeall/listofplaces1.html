@@ -62,7 +62,15 @@
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     console.log("Responsetext: " + xmlhttp.responseText);
                     json = JSON.parse(xmlhttp.responseText);
-                    console.log("JSON näkyy: " + json);
+                    var length = 0;
+                    for (var key in json) {
+                        if (json.hasOwnProperty(key)) {
+                            length++;
+                        }
+                    }
+                    if (length> 0) { // something found
+                        console.log(json[0].Name);
+                    };
                     //myFunction(resultArr);
                     //Jos alla olevaa käyttää saa tiedot jotenkin näkyviin
                     //document.getElementById("locationInfo").innerHTML = xmlhttp.responseText;
@@ -96,7 +104,7 @@
         var unOrdered;
         var listElement, nestedElement, unNestedElement;
         var string;
-        for (i in json.rows) {
+        for (i in json) {
             console.log("for eachissa");
             // create a form group div
             unOrdered = document.createElement("ul");
@@ -105,7 +113,7 @@
 
             listElement = document.createElement("li");
             listElement.setAttribute("class", "del");
-            string = json.rows[i].Name;
+            string = json[i].Name;
             listElement.innerHTML = string;
             unOrdered.appendChild(listElement);
             nestedElement = document.createElement("ul");
@@ -113,7 +121,7 @@
             listElement.appendChild(nestedElement);
             unNestedElement = document.createElement("li");
             unNestedElement.setAttribute("class", "del");
-            string = json.rows[i].Event_id+", "+json.rows[i].Name+", "+json.rows[i].Type+", "+json.rows[i].Location_Location_name;
+            string = json[i].Event_id+", "+json[i].Name+", "+json[i].Type+", "+json[i].Location_Location_name;
             unNestedElement.innerHTML = string;
 
             nestedElement.appendChild(unNestedElement);

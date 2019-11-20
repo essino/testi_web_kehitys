@@ -36,6 +36,30 @@ app.get('/events/:startdate/:enddate', function (req, res) {
     })
 });
 
+//http://localhost:8081/events/Hartwall Arena (Postmanin GET-haku)
+app.get('/events/:location', function (req, res) {
+    console.log(req.params);
+
+    con.query("SELECT * FROM location WHERE Location_name='" + req.params.location + "';", function (err, result, fields) {
+        console.log("inside query");
+        if (err) throw err;
+        let results = [];
+        if (result.length){
+            for (var i = 0; i < result.length; i++){
+                results.push(result[i]);
+            }
+            console.log(result);
+        }
+        console.log("before json");
+
+        //sends the HTTP response
+        console.log("before sending response");
+        res.send(results);
+
+        console.log("results: " + results);
+    })
+});
+
 //listens for connections on the specified port
 var server = app.listen(8081, function () {
     var host = server.address().address
@@ -65,5 +89,3 @@ con.connect(function(err) {
         }
     });*/
 });
-
-

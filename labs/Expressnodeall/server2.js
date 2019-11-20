@@ -37,8 +37,8 @@ var mysql = require('mysql');
 
 var con = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "YcUlm2rm2r",
+    user: "",
+    password: "",
     database: "example_db"
 });
 
@@ -56,8 +56,8 @@ console.log("Alkaa");
 const mariadb = require('mariadb');
 const pool = mariadb.createPool({
     host: 'localhost',
-    user:'root',
-    password: 'YcUlm2rm2r',
+    user:'',
+    password: '',
     database: 'example_db',
     connectionLimit: 5
 });

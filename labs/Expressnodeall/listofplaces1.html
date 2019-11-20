@@ -61,6 +61,7 @@
             xmlhttp.onreadystatechange = function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     console.log("Responsetext: " + xmlhttp.responseText);
+
                     json = JSON.parse(xmlhttp.responseText);
                     var length = 0;
                     for (var key in json) {
@@ -83,20 +84,17 @@
                     }
                     else {
                         document.getElementById("locationInfo").innerHTML = "<br/>Ei tapahtumatietoja tältä ajalta.";
-
                     }
-
                 }
             };
             xmlhttp.open("GET", "http://localhost:8081/events/" + startdate + "/" + enddate, true);
             //xmlhttp.open("GET", "http://localhost:8081/api/events?start=" + startdate+"&end="+enddate, true);
             xmlhttp.send();
-            //http://localhost:8081/api/events?start=
         }
     }
 
     function showList(json) {
-        console.log("SHowlist funktiossa");
+        console.log("Showlist funktiossa");
         //document.getElementById("locationInfo").innerHTML = "New text!";
         var divElement = document.getElementById("locationInfo");
 
@@ -121,11 +119,13 @@
             listElement.appendChild(nestedElement);
             unNestedElement = document.createElement("li");
             unNestedElement.setAttribute("class", "del");
-            string = json[i].Event_id+", "+json[i].Name+", "+json[i].Type+", "+json[i].Location_Location_name;
+            string = json[i].Date+", "+json[i].Name+", "+json[i].Type+", "+json[i].Time+", "+json[i].Location_name;
             unNestedElement.innerHTML = string;
 
             nestedElement.appendChild(unNestedElement);
+
         }
+        string = '';
         // delete submit-button
         var submitBtn = document.getElementById("submit");
         var parent  = document.getElementById("wholeContainer");

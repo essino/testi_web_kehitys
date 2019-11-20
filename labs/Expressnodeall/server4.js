@@ -70,8 +70,8 @@ var server = app.listen(8081, function () {
 //Open http://127.0.0.1:8081/events/" + startdate + "/" + enddate in any browser
 var con = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "YcUlm2rm2r",
+    user: "",
+    password: "",
     database: "example_db"
 });
 
